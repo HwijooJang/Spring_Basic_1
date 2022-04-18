@@ -12,7 +12,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Member save(Member member) {
-        Member.setId(++sequence);
+        member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
     }
@@ -30,5 +30,9 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values()); // 실무에서는 List를 많이 쓴다.
+    }
+
+    public void clearStore(){
+        store.clear(); // Test 코드를 작성 후 콜백을 해주는 로직으로 Test문에 사용하려면 작성해야한다.
     }
 }
