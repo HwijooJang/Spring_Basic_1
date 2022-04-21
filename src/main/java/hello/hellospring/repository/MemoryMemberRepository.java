@@ -12,7 +12,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Member save(Member member) {
-        member.setId(++sequence);
+        member.setId(++sequence); // 시퀀스를 사용해서 순차적으로 정수값을 자동적으로 생성한다
         store.put(member.getId(), member);
         return member;
     }
