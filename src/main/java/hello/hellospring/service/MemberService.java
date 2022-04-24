@@ -42,6 +42,6 @@ public class MemberService {
     public Optional<Member> findOne(Long memberId){
         return memberRepository.findById(memberId);
     }
-
+        // 옵셔널을 사용해서 Id를 통해 한명을 찾아낸다.
 
 }
