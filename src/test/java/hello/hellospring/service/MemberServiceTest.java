@@ -68,6 +68,6 @@ class MemberServiceTest {
     }
 
     @Test
-    void findOne() {
+    void findOne() { // 복습
     }
 }
