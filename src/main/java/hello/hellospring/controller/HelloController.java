@@ -19,7 +19,7 @@ public class HelloController {
     @GetMapping("hello-MVC")
     public String helloMVC(@RequestParam("name") String name, Model model ){
         model.addAttribute("name", name);
-        return "hello-template";
+        return "hello-template"; // 매핑으로 부른다.
     }
 
     @GetMapping("hello-string")
