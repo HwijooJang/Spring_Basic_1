@@ -1,8 +1,11 @@
 package hello.hellospring.controller;
 
+import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MemberController { // @Controller를 적는 순간 스프링 컨테이너가 생기는데 거기에 MemberController를 생성하고 관리를 한다
@@ -23,6 +26,23 @@ public class MemberController { // @Controller를 적는 순간 스프링 컨테
     @Autowired
     public void setMemberService(MemberService memberService) {
         this.memberService = memberService;*/ // setter 주입 방식 (public으로 노출이 되어있기때문에 중간에 잘못 바꾸면 문제가 된다.)
+    }
+
+    @GetMapping("/members/new") // url로 직접 치면 GetMapping으로 한다. (주로 조회할때 사용한다.)
+    public String createFoem(){
+        return "members/createMemberForm";
+    }
+
+    @PostMapping("/members/new") // 데이터를 입력 후 전달을 할때 주로 PostMapping으로 한다.
+    public String create(MemberForm form) {
+       Member member = new Member();
+        member.setName(form.getName());
+
+       // System.out.println("member = " + member.getName()); // 출력결과 확인용
+        
+        memberService.join(member);
+
+        return "redirect:/";
     }
 }
 
