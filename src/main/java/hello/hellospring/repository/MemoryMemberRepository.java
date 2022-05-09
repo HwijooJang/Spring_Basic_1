@@ -1,10 +1,12 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import jdk.dynalink.beans.StaticClass;
+import org.springframework.stereotype.Repository;
+
 
 import java.util.*;
 
+@Repository // @Service를 넣었던 것과 동일하게 Repository를 넣어주므로써 자바문법을 스프링 컨테이너에 연결을 시켜준다. (컴포넌트 스캔과 의존관계 설정)
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();

@@ -1,6 +1,5 @@
 package hello.hellospring.controller;
 
-import jdk.dynalink.beans.StaticClass;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
