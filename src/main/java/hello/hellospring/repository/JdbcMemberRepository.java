@@ -133,7 +133,7 @@ public class JdbcMemberRepository implements MemberRepository {
     private void close(Connection conn, PreparedStatement pstmt, ResultSet rs)
     {
         try {
-            if (rs != null) {
+            if (rs != null) { //
                 rs.close();
             }
         } catch (SQLException e) {
@@ -151,7 +151,7 @@ public class JdbcMemberRepository implements MemberRepository {
                 close(conn);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // sql 명령문 복습
         }
     }
     private void close(Connection conn) throws SQLException {
