@@ -1,6 +1,6 @@
 package hello.hellospring;
 
-import hello.hellospring.repository.JdbcMemberRepository;
+import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,9 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource); // 기존의 코드는 손대지 않고 SpringConfig 수정 즉 Assembely만 수정을 하면 나머지 코드들은
+        //return new JdbcMemberRepository(dataSource); // 기존의 코드는 손대지 않고 SpringConfig 수정 즉 Assembely만 수정을 하면 나머지 코드들은
         // 전혀 손을 대지 않아도 수정이 되는것을 볼 수 있다. 현재도 이러한 방식을 사용한다.
         // MemoryMemberRepository -> JdbcMemberRepository 로 바꾸는 방식을 진행한것이다.
+        return new JdbcTemplateMemberRepository(dataSource); // 스프링 JdbcTemplate 로 진행하는 방식이다.
     }
 }
