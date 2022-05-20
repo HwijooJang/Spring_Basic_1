@@ -38,7 +38,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
     @Override
     public Optional<Member> findById(Long id) { //JdbcMemberRepository 에서 작성했던 긴 로직을 이 두줄로 바꿀 수 있다.
         List<Member> result = jdbcTemplate.query("Select * from member where id = ?", memberRowMapper(), id);
-           return result.stream().findAny();
+           return result.stream().findAny(); // 변환 참조
     }
 
     @Override
