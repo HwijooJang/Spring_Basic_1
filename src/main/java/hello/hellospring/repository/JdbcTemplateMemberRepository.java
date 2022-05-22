@@ -15,7 +15,7 @@ import java.util.Optional;
 
 public class JdbcTemplateMemberRepository implements MemberRepository{
 
-    private final JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate; // Jdbc를 등록하는 final
 
     @Autowired // 생성자가 하나만 있으면 스프링 빈으로 등록이 되기때문에 Autowired 를 생략할 수 있다.
     public JdbcTemplateMemberRepository(DataSource dataSource) {
