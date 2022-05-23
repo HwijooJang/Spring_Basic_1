@@ -33,5 +33,5 @@ public class SpringConfig {
         // 전혀 손을 대지 않아도 수정이 되는것을 볼 수 있다. 현재도 이러한 방식을 사용한다.
         // MemoryMemberRepository -> JdbcMemberRepository 로 바꾸는 방식을 진행한것이다.
         return new JdbcTemplateMemberRepository(dataSource); // 스프링 JdbcTemplate 로 진행하는 방식이다.
-    }
+    }  // JdbcTemplate로 사용을 해 간결하고 깔끔한 코드가 되는 것을 볼 수 있다.
 }

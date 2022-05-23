@@ -38,7 +38,7 @@ class MemberServiceIntegrationTest {
 
 //Given
         Member member1 = new Member();
-        member1.setName("spring");
+        member1.setName("spring"); // set을 입력하므로써 동일 값에서 예외 처리를 할건지 물어본다.
         Member member2 = new Member();
         member2.setName("spring");
 

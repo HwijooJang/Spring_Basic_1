@@ -59,6 +59,6 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
             member.setName(rs.getString("name"));
             return member;
         };
-    }
+    } // JdbcTemplate를 이용해 길고 긴 DB로직이 아닌 짧고 간결하게 처리 할 수 있다.
 
 }
