@@ -24,7 +24,7 @@ class MemberServiceIntegrationTest {
     public void 회원가입() throws Exception {
 //Given
         Member member = new Member();
-        member.setName("spring"); // DB에 아이디가 있기 때문에 예외 에러가 난다.
+        member.setName("spring100"); // DB에 아이디가 있기 때문에 예외 에러가 난다.
                                   // DB를 삭제 후 다시 실행을 하면 테스트가 정상작동 된다.
 //When
         Long saveId = memberService.join(member);
