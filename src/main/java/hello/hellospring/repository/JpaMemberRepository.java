@@ -36,7 +36,7 @@ public class JpaMemberRepository implements MemberRepository {
 
     @Override
     public List<Member> findAll() {
-        return em.createQuery("select m from Member m", Member.class)
+        return em.createQuery("select m from Member m", Member.class) // JPA를 이용하면 더욱 더 쿼리문이 간단해진다.
                 .getResultList(); // 객체를 대상으로 qureay 문을 날린다.
 
     }
